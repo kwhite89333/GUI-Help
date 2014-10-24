@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset='UTF-8'>
+    <!-- 
+    Dalton James, Dalton_James@student.uml.edu   
+    UMass Lowell Computer Science
+    Student in Jesse Heines GUI Programming I
+    
+    File: index.html
+    Created: 10/21/2014
+    
+    page to display the multiplication table 
+    Updated:
+    -->
+
+    <title>Mult Table</title>
+
+
+    <link href="mult_table_style.css" rel="stylesheet" type="text/css">
+
+    <script src="http://code.jquery.com/jquery-2.1.1.js"></script>
+    <script src="mult_table.js"></script>
+
+  </head>
+  <body>
+  <div id="body-wrapper">
+    <!--form to take in the size of the multiplication table -->
+    <form id="m_form" action="javascript:void(0)">
+      <div class="form_ele">
+        <label>Min Horizontal Value:</label>
+        <input id="min_h" class="text_box" type="number" min="-100" max="100" tabindex="1" />
+      </div>
+
+      <div class="form_ele">
+        <label>Max Horizontal Value:</label>
+        <input id="max_h" class="text_box" type="number" min="-100" max="100" tabindex="1" tabindex="2" /> 
+      </div>
+
+      <div class="form_ele">
+        <label>Min Vertical Value:</label>
+        <input id="min_v" class="text_box" type="number" min="-100" max="100" tabindex="1" tabindex="3" /> 
+      </div>
+
+      <div class="form_ele">
+        <label>Max Vertical Value:</label>
+        <input id="max_v" class="text_box" type="number" min="-100" max="100" tabindex="1" tabindex="4" />      
+      </div>
+
+
+      <input class="submit_box" type="submit" tabindex="5" />
+    </form>
+    
+    <p id="error">Error: Max value must be greater than the Min value</p>
+    <table id="result"></table>
+  </div>
+  </body>
+</html>
