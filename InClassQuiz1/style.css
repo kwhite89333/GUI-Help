@@ -1,0 +1,17 @@
+#body-wrapper {
+	width: 50%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+#pass {
+	background-color: green;
+}
+
+#fail {
+	background-color: red;
+}
+
+.hide {
+	display: none;
+}
