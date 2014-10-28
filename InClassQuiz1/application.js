@@ -5,6 +5,9 @@ $(document).ready( function() {
 
 		var inStr = $("#m-input").val();
 
-		(inStr === "Kdubzz fo life") ? $("#pass").removeClass("hide") : $("#fail").removeClass("hide");
+		setTimeout(  function() {
+			(inStr === "Kdubzz fo life") ? $("#pass").removeClass("hide") : $("#fail").removeClass("hide");
+		}, 100);
+
 	});
 });
