@@ -2,6 +2,8 @@
 // named corresponding to fragment identifiers.
 
 $(document).ready( function() {
+	// Remove awkward CSS
+	$("li.nav-btn:last").css("border-bottom", "0px");
 
 
   // Sets the "active" class on the active navigation link.
