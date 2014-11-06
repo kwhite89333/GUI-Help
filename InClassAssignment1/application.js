@@ -7,17 +7,12 @@ $(document).ready( function() {
 
 	//index of cached pages
 	var partialCache = {};
-	//last page loaded - jQuery obj of container div
-	var lastPage = "";
 
 	function getContent(fragmentId) {
-		//gets rid of current page
-		//$("#"+lastPage+"-div").hide();
 
 		// if the page has been previously loaded, load from cache
 		if ( partialCache[fragmentId] ) {
 			console.log("Perviously Loaded...")
-			//$("#"+fragmentId+"-div").show();
 			$("#content").html(partialCache[fragmentId]);
 
 		}
@@ -27,14 +22,10 @@ $(document).ready( function() {
 		    // @function() "on success" binds/runs page events to the specific page
 		    $("#content").load(fragmentId + ".html", function() {
 		    	console.log("Not currently cached, loading...")
-		    	var htmlData = $("#"+fragmentId+"-div").html();
-		    	partialCache[fragmentId] = htmlData;
-		    	//partialCache[fragmentId] = fragmentId;
+		    	partialCache[fragmentId] = $("#"+fragmentId+"-div").html();
     		});
 		}
 
-		//stores new current page
-		// lastPage = fragmentId;
 		onSuccess(fragmentId);
 
 	}
@@ -87,17 +78,11 @@ $(document).ready( function() {
     // This gets rid of the "#" character.
     var fragmentId = location.hash.substr(1);
 
-    // Loads the partial HTML page and adds it into "#content"
-    // @function() "on success" binds/runs page events to the specific page
-    $("#content").empty().load(fragmentId + ".html", function() {
-    	onSuccess(fragmentId);
-    });
-	//getContent(fragmentId);
+	getContent(fragmentId);
 
     // Toggle the "active" class on the link currently navigated to.
     setActiveLink(fragmentId);
 
-    $("#"+lastPage+"-div").hide();
   }
 
   // If no fragment identifier is provided,
