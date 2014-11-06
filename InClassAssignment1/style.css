@@ -1,9 +1,11 @@
 body {
 	height: 600px;
+	background-color: #424242;
+	color: white;
 }
 
 #body-wrapper {
-	width: 70%;
+	width: 72%;
 	height: 100%;
 	margin: 0 auto;
 	text-align: center;
@@ -12,41 +14,57 @@ body {
 #center-display {
 	width: 100%;
 	height: 100%;
+	padding: 10px;
 }
 
 #navigation-wrapper {
-	width: 12%;
-	display: inline-block;
-	background-color: #D5D5D5;
+	display: inline-table;
+	width: 10%;
+	height: 100%;
+}
+
+#table-wrapper {
+	display: table-cell;
+	vertical-align: middle;
 	height: 100%;
 }
 
 #nav-table {
 	width: 100%;
-	height: 100%;
+	height: 35%;
+	vertical-align: middle;
 	padding: 0;
 	margin: 0;
 }
 
-li.nav-btn {
+#nav-table li.nav-btn {
 	width: 100%;
 	height: 33%;
 	display: table;
-	border-bottom: 1px solid black;
+	/*border-bottom: 1px solid black;*/
+	margin-top: 5px;
+	margin-bottom: 5px;
+	border: solid black 1px;
+	border-radius: 5px;
+	background-color: #2E2E2E;
+}
+
+#nav-table li.nav-btn:hover {
+	background-color: #151515;
 }
 
 #nav-table li.nav-btn a {
 	display: table-cell;
-	color: black;
+	color: white;
 	text-decoration: none;
 	font-family: Arial;
-	font-size: 18px;
+	font-size: 16px;
 	font-style: normal;
 	vertical-align: middle;
 }
 
 #content-wrapper {
-	width: 87%;
+	width: 89%;
 	height: 100%;
 	display: inline-block;
 	float: right;

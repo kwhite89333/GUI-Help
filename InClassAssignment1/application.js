@@ -2,8 +2,6 @@
 // named corresponding to fragment identifiers.
 
 $(document).ready( function() {
-	// Remove awkward CSS
-	$("li.nav-btn:last").css("border-bottom", "0px");
 
   // Sets the "active" class on the active navigation link.
   function setActiveLink(fragmentId) {
@@ -77,9 +75,3 @@ $(document).ready( function() {
   $(window).bind('hashchange', navigate);
 
 }); //end of $(document).ready
-
-
-//jQuery Extension: returns true if selector exists, false if not
-jQuery.fn.exists = function () {
-    return this.length !== 0;
-}
