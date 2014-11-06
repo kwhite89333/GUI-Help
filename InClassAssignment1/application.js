@@ -5,32 +5,6 @@ $(document).ready( function() {
 	// Remove awkward CSS
 	$("li.nav-btn:last").css("border-bottom", "0px");
 
-	//index of cached pages
-	var partialCache = {};
-
-	function getContent(fragmentId) {
-
-		// if the page has been previously loaded, load from cache
-		if ( partialCache[fragmentId] ) {
-			console.log("Perviously Loaded...")
-			$("#content").html(partialCache[fragmentId]);
-
-		}
-		// if the page hasn't already been loaded, load it
-		else {
-			// Loads the partial HTML page and adds it into "#content"
-		    // @function() "on success" binds/runs page events to the specific page
-		    $("#content").load(fragmentId + ".html", function() {
-		    	console.log("Not currently cached, loading...")
-		    	partialCache[fragmentId] = $("#"+fragmentId+"-div").html();
-    		});
-		}
-
-		onSuccess(fragmentId);
-
-	}
-
-
   // Sets the "active" class on the active navigation link.
   function setActiveLink(fragmentId) {
     $("#nav-table li.nav-btn").each( function (i, linkElement) {
@@ -78,7 +52,11 @@ $(document).ready( function() {
     // This gets rid of the "#" character.
     var fragmentId = location.hash.substr(1);
 
-	getContent(fragmentId);
+    //loads partial html fragment and inserts into the DOM,
+    //jQuery.load also does its own caching
+	$("#content").load(fragmentId + ".html", function() {
+    	onSuccess(fragmentId);
+	});
 
     // Toggle the "active" class on the link currently navigated to.
     setActiveLink(fragmentId);
