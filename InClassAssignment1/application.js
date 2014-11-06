@@ -87,12 +87,12 @@ $(document).ready( function() {
     // This gets rid of the "#" character.
     var fragmentId = location.hash.substr(1);
 
-    // // Loads the partial HTML page and adds it into "#content"
-    // // @function() "on success" binds/runs page events to the specific page
-    // $("#content").empty().load(fragmentId + ".html", function() {
-    // 	onSuccess(fragmentId);
-    // });
-	getContent(fragmentId);
+    // Loads the partial HTML page and adds it into "#content"
+    // @function() "on success" binds/runs page events to the specific page
+    $("#content").empty().load(fragmentId + ".html", function() {
+    	onSuccess(fragmentId);
+    });
+	//getContent(fragmentId);
 
     // Toggle the "active" class on the link currently navigated to.
     setActiveLink(fragmentId);
